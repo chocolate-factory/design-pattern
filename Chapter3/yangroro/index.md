@@ -44,8 +44,8 @@ def create_maze(factory: MazeFactory):
     room2 = factory.make_room()
     door = factory.make_door(room1, room2)
     
-    maze->add_room(room1)
-    maze->add_room(room2)
+    maze.add_room(room1)
+    maze.add_room(room2)
     
     return maze
 ```
@@ -67,7 +67,7 @@ class MazeBuilder:
     def build_maze(self):
         self.maze = Maze()
     def build_room(self, room_number: int):
-        self.maze.room[room_number] = Room();
+        self.maze.room[room_number] = Room()
     def build_door(self, room_number1, room_number2):
         room1 = self.room.get(room_number1)
         room2 = self.room.get(room_number2)
