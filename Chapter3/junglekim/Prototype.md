@@ -55,3 +55,11 @@ class RecordFactory:
   def get_record(self, type):
     return self._record_map[type].clone()
 ```
+
+## 느낀점
+한번도 다뤄보지 못한 패턴이다. 책에서 설명하는 내용으로는 썩 와닿진 않아서 실제로 사용한 코드를 한번 보고싶다.
+`javascript`의 Prototype은 이 Prototype인 건가?? 그렇다면 deepcopy가 아닌 Object 내부의 `__proto__` 값을 통해서 링크된 상위 Prototype을 참조하는데.. 흠.. shallow copy를 이용한 clone의 일종이라고 봐야하는 건가..?
+
+
+## 참고
+https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67
