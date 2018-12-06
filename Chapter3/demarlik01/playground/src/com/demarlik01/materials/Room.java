@@ -21,4 +21,8 @@ public class Room implements MapSite {
     this.sites.put(direction, mapSite);
   }
 
+  public Integer getNo(){
+    return no;
+  }
+
 }

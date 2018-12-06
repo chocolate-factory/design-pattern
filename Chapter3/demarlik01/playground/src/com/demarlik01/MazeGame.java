@@ -1,9 +1,12 @@
-package com.demarlik01.patterns.abstractFactory;
+package com.demarlik01;
 
 import com.demarlik01.materials.Direction;
 import com.demarlik01.materials.Door;
 import com.demarlik01.materials.Maze;
 import com.demarlik01.materials.Room;
+import com.demarlik01.patterns.abstractFactory.MazeFactory;
+import com.demarlik01.patterns.builder.CountingMazeBuilder;
+import com.demarlik01.patterns.builder.MazeBuilder;
 
 public class MazeGame {
   public Maze createMaze(MazeFactory factory){
@@ -26,5 +29,24 @@ public class MazeGame {
     room2.setSide(Direction.SOUTH, factory.makeWall());
 
     return maze;
+  }
+
+  public Maze createMaze(MazeBuilder builder){
+    return builder.getMaze();
+  }
+
+  public Maze createMazeCount(CountingMazeBuilder builder){
+    builder.buildRoom(100);
+    builder.buildRoom(101);
+    builder.buildDoor(100, 101);
+    System.out.println(builder.getCounts());
+    return builder.getMaze();
+  }
+
+  public Maze createComplexMaze(MazeBuilder builder){
+    builder.buildRoom(1);
+    builder.buildRoom(2);
+    builder.buildRoom(1001);
+    return builder.getMaze();
   }
 }

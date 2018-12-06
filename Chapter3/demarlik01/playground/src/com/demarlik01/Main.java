@@ -2,7 +2,8 @@ package com.demarlik01;
 
 import com.demarlik01.patterns.abstractFactory.EnchantedMazeFactory;
 import com.demarlik01.patterns.abstractFactory.MazeFactory;
-import com.demarlik01.patterns.abstractFactory.MazeGame;
+import com.demarlik01.patterns.builder.CountingMazeBuilder;
+import com.demarlik01.patterns.builder.StandardMazeBuilder;
 
 public class Main {
   public static void main(String[] args) {
@@ -14,6 +15,14 @@ public class Main {
 
     MazeGame game2 = new MazeGame();
     game2.createMaze(new MazeFactory());
+
+    // Builder
+    //
+    MazeGame game3 = new MazeGame();
+    game3.createMaze(new StandardMazeBuilder());
+
+    MazeGame game4 = new MazeGame();
+    game4.createMaze(new CountingMazeBuilder());
 
   }
 }

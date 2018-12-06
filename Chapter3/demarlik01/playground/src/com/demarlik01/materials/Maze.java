@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Maze {
 
-  private List<Room> rooms = new ArrayList<Room>();
+  private List<Room> rooms = new ArrayList<>();
 
   public void addRoom(Room room) {
     this.rooms.add(room);
@@ -13,5 +13,14 @@ public class Maze {
 
   public List<Room> getRooms() {
     return this.rooms;
+  }
+
+  public Room getRoom(Integer number) {
+    for (Room room : rooms) {
+      if (room.getNo().equals(number)) {
+        return room;
+      }
+    }
+    return null;
   }
 }
