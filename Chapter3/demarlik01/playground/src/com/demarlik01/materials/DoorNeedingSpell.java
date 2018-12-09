@@ -1,4 +1,4 @@
-package com.demarlik01.patterns.abstractFactory;
+package com.demarlik01.materials;
 
 import com.demarlik01.materials.Door;
 import com.demarlik01.materials.Room;

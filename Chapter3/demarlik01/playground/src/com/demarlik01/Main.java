@@ -24,5 +24,11 @@ public class Main {
     MazeGame game4 = new MazeGame();
     game4.createMaze(new CountingMazeBuilder());
 
+    //Factory method
+    MazeGame game5 = new BoombedMazeGame();
+    game5.createMaze();
+
+
+
   }
 }
