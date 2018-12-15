@@ -1,9 +1,14 @@
 package com.demarlik01;
 
+import com.demarlik01.materials.Door;
+import com.demarlik01.materials.Maze;
+import com.demarlik01.materials.Room;
+import com.demarlik01.materials.Wall;
 import com.demarlik01.patterns.abstractFactory.EnchantedMazeFactory;
 import com.demarlik01.patterns.abstractFactory.MazeFactory;
 import com.demarlik01.patterns.builder.CountingMazeBuilder;
 import com.demarlik01.patterns.builder.StandardMazeBuilder;
+import com.demarlik01.patterns.prototype.MazePrototypeFactory;
 
 public class Main {
   public static void main(String[] args) {
@@ -28,7 +33,10 @@ public class Main {
     MazeGame game5 = new BoombedMazeGame();
     game5.createMaze();
 
-
+    MazeGame game6 = new MazeGame();
+    game6.createMaze(new MazePrototypeFactory(
+        new Maze(), new Wall(), new Room(123), new Door(new Room(123), new Room(124))
+    ));
 
   }
 }
